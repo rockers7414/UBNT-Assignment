@@ -1,0 +1,67 @@
+form
+  .flexRow.row--comfy
+    .flexCol--2
+      label First Name
+    .flexCol--8.appForm--cozy
+      input.input--full(
+        type = "text"
+      )
+  .flexRow.row--comfy
+    .flexCol--2
+      label Last Name
+    .flexCol--8.appForm--cozy
+      input.input--full(
+        type = "text"
+      )
+  .flexRow.row--comfy
+    .flexCol--2
+      label Favorite Colors
+    .flexCol--10
+      ol.list.list--inline.appInputList
+        li.appInputGroup(ng-repeat="color in configureFormCtrl.colors")
+          input(
+            type = "checkbox"
+            name = "colors"
+            id   = "{{color}}"
+          )
+          label(
+            for = "{{color}}"
+          ) {{color}}
+  .flexRow.row--comfy
+    .flexCol--2
+      label Favorite City
+    .flexCol--10
+      .appInputGroup.appInputGroup--cozy(ng-repeat="city in configureFormCtrl.cities")
+        input(
+          type = "radio"
+          name = "city"
+          id   = "{{city}}"
+        )
+        label(
+          for = "{{city}}"
+        ) {{city}}
+  .flexRow.row--comfy
+    .flexCol--2
+      label Verified
+    .flexCol--10
+      .appForm--cozy
+        .toggle.appToggle(
+          data-on  = "on"
+          data-off = "off"
+        )
+          input(
+            id   = "verified"
+            type = "checkbox"
+          )
+          label(
+            for = "verified"
+          )
+  .appFormFooter.appFormFooter--standalone
+    .appFormFooter__left
+      button.appMainButton.appMainButton--success
+        | APPLY CHANGES
+      button.appMainButton.appMainButton--transparent
+        | RESET
+    .appFormFooter__right
+      button.appMainButton.appMainButton--danger
+        | CANCEL 
