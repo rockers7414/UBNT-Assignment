@@ -11,6 +11,10 @@ angular.module('example').config([
         controllerAs: 'homeCtrl',
         url: '/',
         template: require('../../views/home.jade')()
+      })
+      .state('configure', {
+        url: '/configure',
+        template: require('../../views/configure.jade')()
       });
   }
 ]);
