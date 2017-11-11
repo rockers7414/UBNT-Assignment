@@ -1,7 +1,9 @@
 form
   .flexRow.row--comfy
     .flexCol--2
-      label First Name
+      label(
+        translate = "CONFIGURE.FIRST_NAME"
+      )
     .flexCol--8.appForm--cozy
       input.input--full(
         type     = "text"
@@ -9,7 +11,9 @@ form
       )
   .flexRow.row--comfy
     .flexCol--2
-      label Last Name
+      label(
+        translate = "CONFIGURE.LAST_NAME"
+      )
     .flexCol--8.appForm--cozy
       input.input--full(
         type = "text"
@@ -17,7 +21,9 @@ form
       )
   .flexRow.row--comfy
     .flexCol--2
-      label Favorite Colors
+      label(
+        translate = "CONFIGURE.FAVORITE_COLORS"
+      )
     .flexCol--10
       ol.list.list--inline.appInputList
         li.appInputGroup(ng-repeat="color in configureFormCtrl.colors")
@@ -33,7 +39,9 @@ form
           ) {{color.key}}
   .flexRow.row--comfy
     .flexCol--2
-      label Favorite City
+      label(
+        translate = "CONFIGURE.FAVORITE_CITY"
+      )
     .flexCol--10
       .appInputGroup.appInputGroup--cozy(ng-repeat="city in configureFormCtrl.cities")
         input(
@@ -48,7 +56,9 @@ form
         ) {{city}}
   .flexRow.row--comfy
     .flexCol--2
-      label Verified
+      label(
+        translate = "CONFIGURE.VERIFIED"
+      )
     .flexCol--10
       .appForm--cozy
         .toggle.appToggle(
@@ -69,13 +79,13 @@ form
         ng-disabled = "!configureFormCtrl.config.verified"
         ng-click    = "configureFormCtrl.applyClick()"
       )
-        | APPLY CHANGES
+        | {{'BUTTON.APPLY_CHANGES' | translate}}
       button.appMainButton.appMainButton--transparent(
         ng-click = "configureFormCtrl.resetClick()"
       )
-        | RESET
+        | {{'BUTTON.REST' | translate}}
     .appFormFooter__right
       button.appMainButton.appMainButton--danger(
         ng-click = "configureFormCtrl.cancelClick()"
       )
-        | CANCEL 
+        | {{'BUTTON.CANCEL' | translate}}

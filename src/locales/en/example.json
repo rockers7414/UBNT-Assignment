@@ -1,4 +1,16 @@
 {
   "EXAMPLE_HELLO_WORLD": "Hello world",
-  "EXAMPLE_SITE_CONFIGURE": "Configure me!"
+  "EXAMPLE_SITE_CONFIGURE": "Configure me!",
+  "CONFIGURE": {
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "FAVORITE_COLORS": "Favorite Colors",
+    "FAVORITE_CITY": "Favorite City",
+    "VERIFIED": "Verified"
+  },
+  "BUTTON": {
+    "APPLY_CHANGES": "APPLY CHANGES",
+    "REST": "RESET",
+    "CANCEL": "CANCEL"
+  }
 }
