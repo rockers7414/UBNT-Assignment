@@ -1,30 +1,30 @@
-form
-  .flexRow.row--comfy
-    .flexCol--2
+form.unifiTest__form
+  .row.row--comfy.unifiTest__row
+    .col--md3
       label.form__label(
         translate = "CONFIGURE.FIRST_NAME"
       )
-    .flexCol--8.appForm--cozy
+    .col--md7.appForm--cozy
       input.input--full(
         type     = "text"
         ng-model = "configureFormCtrl.config.firstName"
       )
-  .flexRow.row--comfy
-    .flexCol--2
+  .row.row--comfy.unifiTest__row
+    .col--md3
       label.form__label(
         translate = "CONFIGURE.LAST_NAME"
       )
-    .flexCol--8.appForm--cozy
+    .col--md7.appForm--cozy
       input.input--full(
         type = "text"
         ng-model = "configureFormCtrl.config.lastName"
       )
-  .flexRow.row--comfy
-    .flexCol--2
+  .row.row--comfy.unifiTest__row
+    .col--md3
       label.form__label(
         translate = "CONFIGURE.FAVORITE_COLORS"
       )
-    .flexCol--10
+    .col--md9
       ol.list.list--inline.appInputList
         li.appInputGroup(ng-repeat="color in configureFormCtrl.colors")
           input(
@@ -37,12 +37,12 @@ form
           label(
             for = "{{color.key}}"
           ) {{color.key}}
-  .flexRow.row--comfy
-    .flexCol--2
+  .row.row--comfy.unifiTest__row
+    .col--md3
       label.form__label(
         translate = "CONFIGURE.FAVORITE_CITY"
       )
-    .flexCol--10
+    .col--md9
       .appInputGroup.appInputGroup--cozy(ng-repeat="city in configureFormCtrl.cities")
         input(
           type     = "radio"
@@ -54,12 +54,12 @@ form
         label(
           for = "{{city}}"
         ) {{city}}
-  .flexRow.row--comfy
-    .flexCol--2
+  .row.row--comfy.unifiTest__row
+    .col--md3
       label.form__label(
         translate = "CONFIGURE.VERIFIED"
       )
-    .flexCol--10
+    .col--md9
       .appForm--cozy
         .toggle.appToggle(
           data-on  = "on"
@@ -73,7 +73,7 @@ form
           label(
             for = "verified"
           )
-  .appFormFooter.appFormFooter--standalone
+  .appFormFooter.appFormFooter--standalone.unifiTest__formFooter
     .appFormFooter__left
       button.appMainButton.appMainButton--success(
         ng-disabled = "!configureFormCtrl.config.verified"
