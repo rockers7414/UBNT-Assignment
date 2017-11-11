@@ -28,5 +28,9 @@ describe('Directive: unifiHelloWorld', function () {
     it('should have a headline', function () {
       expect(suite.element.find('.unifiTest__headline').length).toBe(1);
     });
+
+    it('should have a configure link', function() {
+      expect(suite.element.find('.unifiTest__link').length).toBe(1);
+    });
   });
 });

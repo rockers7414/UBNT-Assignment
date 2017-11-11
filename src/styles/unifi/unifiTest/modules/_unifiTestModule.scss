@@ -1,22 +1,38 @@
-.unifiTest {
-
-}
+.unifiTest {}
 
 .unifiTest--centered {
   position: absolute;
   left: 50%;
   top: 50%;
+
   @include transform(translate(-50%, -50%));
 }
 
-  .unifiTest__headline {
-    font-size: 40px;
-    text-transform: uppercase;
-  }
+.unifiTest__headline {
+  font-size: 40px;
+  text-transform: uppercase;
+}
 
-  .unifiTest__link {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    color: #00a0db;
-  }
+.unifiTest__link {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #00a0db;
+}
+
+.unifiTest__form {
+  padding-top: 1em;
+}
+
+.unifiTest__formFooter {
+  padding: 0 !important;
+}
+
+.unifiTest__container {
+  max-width: 1200px !important;
+  padding: 1.5em;
+}
+
+.unifiTest__row {
+  padding: 0.5em 0;
+}

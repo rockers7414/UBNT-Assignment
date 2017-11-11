@@ -1,0 +1,36 @@
+.container
+  .row
+    .col--xs6
+      label.label--right(
+        style = "display: block; width: 100%"
+      ) First Name
+    .col--xs6
+      label.value {{config.firstName}}
+  .row
+    .col--xs6
+      label.label--right(
+        style = "display: block; width: 100%"
+      ) Last Name
+    .col--xs6
+      label.value {{config.lastName}}
+  .row
+    .col--xs6
+      label.label--right(
+        style = "display: block; width: 100%"
+      ) Favorite Colors
+    .col--xs6
+      label.value {{config.colors | join}}
+  .row
+    .col--xs6
+      label.label--right(
+        style = "display: block; width: 100%"
+      ) Favorite City
+    .col--xs6
+      label.value {{config.city}}
+  .row
+    .col--xs6
+      label.label--right(
+        style = "display: block; width: 100%"
+      ) Verified
+    .col--xs6
+      label.value {{config.verified ? 'Yes': '' }}

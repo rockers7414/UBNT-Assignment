@@ -1,0 +1,14 @@
+.container.container--fixed.container--centered.container--comfy.unifiTest__container
+  .row
+    .col--md8
+      .appSubHeading.appSubHeading--comfy.appSubHeading--standalone
+        | CONFIGURATION
+      unifi-configure-form(
+        onapply = "configureCtrl.onApply(value)"
+      )
+    .col--md4
+      .appSubHeading.appSubHeading--comfy.appSubHeading--standalone
+        | RESPONSE
+      unifi-configure-summary(
+        config = "configureCtrl.config"
+      )

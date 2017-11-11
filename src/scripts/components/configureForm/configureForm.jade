@@ -1,0 +1,91 @@
+form.unifiTest__form
+  .row.row--comfy.unifiTest__row
+    .col--md3
+      label.form__label(
+        translate = "CONFIGURE.FIRST_NAME"
+      )
+    .col--md7.appForm--cozy
+      input.input--full(
+        type     = "text"
+        ng-model = "configureFormCtrl.config.firstName"
+      )
+  .row.row--comfy.unifiTest__row
+    .col--md3
+      label.form__label(
+        translate = "CONFIGURE.LAST_NAME"
+      )
+    .col--md7.appForm--cozy
+      input.input--full(
+        type = "text"
+        ng-model = "configureFormCtrl.config.lastName"
+      )
+  .row.row--comfy.unifiTest__row
+    .col--md3
+      label.form__label(
+        translate = "CONFIGURE.FAVORITE_COLORS"
+      )
+    .col--md9
+      ol.list.list--inline.appInputList
+        li.appInputGroup(ng-repeat="color in configureFormCtrl.colors")
+          input(
+            type     = "checkbox"
+            name     = "colors"
+            id       = "{{color.key}}"
+            ng-model = "color.value"
+            ng-click = "configureFormCtrl.colorCheck(color)"
+          )
+          label(
+            for = "{{color.key}}"
+          ) {{color.key}}
+  .row.row--comfy.unifiTest__row
+    .col--md3
+      label.form__label(
+        translate = "CONFIGURE.FAVORITE_CITY"
+      )
+    .col--md9
+      .appInputGroup.appInputGroup--cozy(ng-repeat="city in configureFormCtrl.cities")
+        input(
+          type     = "radio"
+          name     = "city"
+          id       = "{{city}}"
+          value    = "{{city}}"
+          ng-model = "configureFormCtrl.config.city"
+        )
+        label(
+          for = "{{city}}"
+        ) {{city}}
+  .row.row--comfy.unifiTest__row
+    .col--md3
+      label.form__label(
+        translate = "CONFIGURE.VERIFIED"
+      )
+    .col--md9
+      .appForm--cozy
+        .toggle.appToggle(
+          data-on  = "on"
+          data-off = "off"
+        )
+          input(
+            id       = "verified"
+            type     = "checkbox"
+            ng-model = "configureFormCtrl.config.verified"
+          )
+          label(
+            for = "verified"
+          )
+  .appFormFooter.appFormFooter--standalone.unifiTest__formFooter
+    .appFormFooter__left
+      button.appMainButton.appMainButton--success(
+        ng-disabled = "!configureFormCtrl.config.verified"
+        ng-click    = "configureFormCtrl.applyClick()"
+      )
+        | {{'BUTTON.APPLY_CHANGES' | translate}}
+      button.appMainButton.appMainButton--transparent(
+        ng-click = "configureFormCtrl.resetClick()"
+      )
+        | {{'BUTTON.REST' | translate}}
+    .appFormFooter__right
+      button.appMainButton.appMainButton--danger(
+        ng-click = "configureFormCtrl.cancelClick()"
+      )
+        | {{'BUTTON.CANCEL' | translate}}
