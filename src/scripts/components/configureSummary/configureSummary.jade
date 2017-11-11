@@ -19,9 +19,7 @@
         style = "display: block; width: 100%"
       ) Favorite Colors
     .col--xs6
-      label(
-        ng-repeat = "color in config.colors"
-      ) {{color}}
+      label {{config.colors | join}}
   .row
     .col--xs6
       label.label--right(
@@ -35,4 +33,4 @@
         style = "display: block; width: 100%"
       ) Verified
     .col--xs6
-      label {{config.verified}}
+      label {{config.verified ? 'Yes': '' }}
