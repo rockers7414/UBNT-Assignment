@@ -5,6 +5,9 @@ angular.module('example').directive('unifiConfigureSummary', [
     return {
       controller: 'ConfigureSummaryController',
       controllerAs: 'configureSummaryCtrl',
+      scope: {
+        config: '='
+      },
       template: require('./configureSummary.jade')()
     };
   }

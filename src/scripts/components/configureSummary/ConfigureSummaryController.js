@@ -1,8 +1,8 @@
 'use strict';
 
-function ConfigureSummaryController () {
+function ConfigureSummaryController() {
 }
 
-ConfigureSummaryController.$inject = [];
+ConfigureSummaryController.$inject = ['$scope'];
 
 angular.module('example').controller('ConfigureSummaryController', ConfigureSummaryController);

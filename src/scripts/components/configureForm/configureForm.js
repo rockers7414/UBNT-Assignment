@@ -5,6 +5,9 @@ angular.module('example').directive('unifiConfigureForm', [
     return {
       controller: 'ConfigureFormController',
       controllerAs: 'configureFormCtrl',
+      scope: {
+        onapply: '&'
+      },
       template: require('./configureForm.jade')()
     };
   }

@@ -3,8 +3,12 @@
     .col--xs9
       .appSubHeading.appSubHeading--comfy.appSubHeading--standalone
         | CONFIGURATION
-      unifi-configure-form
+      unifi-configure-form(
+        onapply = "configureCtrl.onApply(value)"
+      )
     .col--xs3
       .appSubHeading.appSubHeading--comfy.appSubHeading--standalone
         | RESPONSE
-      unifi-configure-summary
+      unifi-configure-summary(
+        config = "configureCtrl.config"
+      )

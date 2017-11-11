@@ -4,7 +4,8 @@ form
       label First Name
     .flexCol--8.appForm--cozy
       input.input--full(
-        type = "text"
+        type     = "text"
+        ng-model = "configureFormCtrl.config.firstName"
       )
   .flexRow.row--comfy
     .flexCol--2
@@ -12,6 +13,7 @@ form
     .flexCol--8.appForm--cozy
       input.input--full(
         type = "text"
+        ng-model = "configureFormCtrl.config.lastName"
       )
   .flexRow.row--comfy
     .flexCol--2
@@ -20,22 +22,26 @@ form
       ol.list.list--inline.appInputList
         li.appInputGroup(ng-repeat="color in configureFormCtrl.colors")
           input(
-            type = "checkbox"
-            name = "colors"
-            id   = "{{color}}"
+            type     = "checkbox"
+            name     = "colors"
+            id       = "{{color.key}}"
+            ng-model = "color.value"
+            ng-click = "configureFormCtrl.colorCheck(color)"
           )
           label(
-            for = "{{color}}"
-          ) {{color}}
+            for = "{{color.key}}"
+          ) {{color.key}}
   .flexRow.row--comfy
     .flexCol--2
       label Favorite City
     .flexCol--10
       .appInputGroup.appInputGroup--cozy(ng-repeat="city in configureFormCtrl.cities")
         input(
-          type = "radio"
-          name = "city"
-          id   = "{{city}}"
+          type     = "radio"
+          name     = "city"
+          id       = "{{city}}"
+          value    = "{{city}}"
+          ng-model = "configureFormCtrl.config.city"
         )
         label(
           for = "{{city}}"
@@ -50,18 +56,26 @@ form
           data-off = "off"
         )
           input(
-            id   = "verified"
-            type = "checkbox"
+            id       = "verified"
+            type     = "checkbox"
+            ng-model = "configureFormCtrl.config.verified"
           )
           label(
             for = "verified"
           )
   .appFormFooter.appFormFooter--standalone
     .appFormFooter__left
-      button.appMainButton.appMainButton--success
+      button.appMainButton.appMainButton--success(
+        ng-disabled = "!configureFormCtrl.config.verified"
+        ng-click    = "configureFormCtrl.applyClick()"
+      )
         | APPLY CHANGES
-      button.appMainButton.appMainButton--transparent
+      button.appMainButton.appMainButton--transparent(
+        ng-click = "configureFormCtrl.resetClick()"
+      )
         | RESET
     .appFormFooter__right
-      button.appMainButton.appMainButton--danger
+      button.appMainButton.appMainButton--danger(
+        ng-click = "configureFormCtrl.cancelClick()"
+      )
         | CANCEL 
