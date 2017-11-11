@@ -5,32 +5,32 @@
         style = "display: block; width: 100%"
       ) First Name
     .col--xs6
-      label {{config.firstName}}
+      label.value {{config.firstName}}
   .row
     .col--xs6
       label.label--right(
         style = "display: block; width: 100%"
       ) Last Name
     .col--xs6
-      label {{config.lastName}}
+      label.value {{config.lastName}}
   .row
     .col--xs6
       label.label--right(
         style = "display: block; width: 100%"
       ) Favorite Colors
     .col--xs6
-      label {{config.colors | join}}
+      label.value {{config.colors | join}}
   .row
     .col--xs6
       label.label--right(
         style = "display: block; width: 100%"
       ) Favorite City
     .col--xs6
-      label {{config.city}}
+      label.value {{config.city}}
   .row
     .col--xs6
       label.label--right(
         style = "display: block; width: 100%"
       ) Verified
     .col--xs6
-      label {{config.verified ? 'Yes': '' }}
+      label.value {{config.verified ? 'Yes': '' }}
